@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Starmatch Wireframe</title>
+<link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#02060b;--ink:#eef3f4;--mute:#8fa3a8;--card:rgba(12,24,32,.72);--line:rgba(255,255,255,.14);--teal:#2f7f73;--blue:#4a8cff;--red:#ff5a5f;--navy:#2a2a6a;color-scheme:dark;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+*{box-sizing:border-box;margin:0}
+html,body{height:100%}
+body{background:#05080c;color:var(--ink);font:14px/1.35 Inter,system-ui,sans-serif;display:flex;gap:32px;align-items:center;justify-content:center;padding:16px}
+#side{width:250px;font-size:12.5px;color:var(--mute)}
+#side h2{font:700 20px Rajdhani,sans-serif;color:var(--ink);margin-bottom:8px}
+#side p{margin:0 0 6px}#side b{color:var(--ink);font-weight:600}
+#phone{width:402px;height:874px;max-height:calc(100vh - 24px);border-radius:56px;border:8px solid #1b1f24;position:relative;overflow:hidden;flex:none;
+background:
+radial-gradient(1px 1px at 20px 30px,#fff,transparent),radial-gradient(1px 1px at 120px 80px,#fff9,transparent),radial-gradient(1.5px 1.5px at 70px 160px,#cde,transparent),radial-gradient(1px 1px at 190px 40px,#fff8,transparent),
+radial-gradient(ellipse 80% 40% at 90% 100%,rgba(130,170,135,.75),transparent 70%),
+radial-gradient(ellipse 120% 40% at 10% 100%,rgba(20,90,80,.8),transparent 70%),
+linear-gradient(#02050a,#04121a 55%,#09302f 90%);
+background-size:200px 200px,260px 260px,310px 310px,170px 170px,100% 100%,100% 100%,100% 100%}
+#screen{position:absolute;inset:0;display:flex;flex-direction:column;padding-top:54px}
+#screen.in{animation:in .25s ease-out}#screen.out{animation:out .25s ease-out}
+@keyframes in{from{opacity:0;transform:translateX(24px)}}@keyframes out{from{opacity:0;transform:translateX(-24px)}}
+.bar{display:flex;align-items:center;gap:8px;padding:6px 14px;min-height:46px}
+.bar h1{flex:1;font:700 22px Rajdhani,sans-serif;letter-spacing:.5px;text-align:center}
+.ib{width:36px;height:36px;border-radius:10px;border:1px solid var(--line);background:var(--card);color:var(--ink);font-size:16px;cursor:pointer}
+.sp{width:36px}
+.body{flex:1;overflow:auto;padding:8px 16px 90px}
+.foot{position:absolute;left:16px;right:16px;bottom:22px;display:flex;gap:8px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:12px;margin-bottom:10px;backdrop-filter:blur(6px)}
+.row{display:flex;align-items:center;gap:10px;cursor:pointer}
+.row .g{flex:1;min-width:0}.row b{font:600 16px Rajdhani,sans-serif;display:block}.row small{color:var(--mute)}
+.btn{flex:1;border:1px solid var(--line);border-radius:12px;padding:11px;font:600 15px Rajdhani,sans-serif;background:#e6e6e6;color:#222;cursor:pointer;text-align:center}
+.btn.d{background:#2b2b2b;color:#eee}.btn.o{background:#fff;color:var(--navy);border-color:#2f8f78}.btn.r{background:#5a1f26;color:#fff;border-color:var(--red)}
+.chips{display:flex;gap:6px;overflow:auto;padding:2px 16px 8px;flex:none}
+.chip{flex:none;padding:6px 12px;border-radius:99px;border:1px solid var(--line);background:var(--card);color:var(--ink);font:600 13px Rajdhani,sans-serif;cursor:pointer}
+.chip.on{background:#e6e6e6;color:#111}
+.tag{font:600 11px Rajdhani,sans-serif;padding:2px 8px;border-radius:99px;border:1px solid var(--line);color:var(--mute)}
+.img{height:130px;border-radius:14px;border:1px dashed var(--line);background:rgba(0,0,0,.35);display:flex;align-items:center;justify-content:center;margin-bottom:10px}
+.img svg{width:80%;height:100%}
+.grid{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+.st{background:rgba(255,255,255,.05);border-radius:10px;padding:8px 10px}.st small{color:var(--mute);display:block;font-size:11px}.st b{font:700 18px Rajdhani,sans-serif}
+.st input,.ed{width:100%;background:#0b141b;border:1px solid var(--line);color:var(--ink);border-radius:8px;padding:6px 8px;font:inherit}
+textarea.ed{min-height:64px;resize:vertical}
+h3{font:700 16px Rajdhani,sans-serif;margin:12px 0 6px;color:#bfe3da}
+.menu{position:absolute;right:14px;top:104px;z-index:5;background:#10191f;border:1px solid var(--line);border-radius:12px;min-width:190px;overflow:hidden;box-shadow:0 10px 30px #000a}
+.menu div{padding:12px 14px;cursor:pointer;font:600 15px Rajdhani,sans-serif}.menu div:hover{background:#1c2a32}
+.scrim{position:absolute;inset:0;background:#0008;z-index:8;display:flex;align-items:flex-end}
+.sheet{width:100%;max-height:75%;overflow:auto;background:#0d1a21;border-top:1px solid var(--line);border-radius:22px 22px 0 0;padding:16px 16px 28px}
+.sheet h2{font:700 20px Rajdhani,sans-serif;margin-bottom:10px}
+.side{border-radius:16px;padding:10px;margin-bottom:10px}
+.side.f{background:rgba(40,90,200,.22);border:1px solid var(--blue)}.side.h{background:rgba(200,40,50,.2);border:1px solid var(--red)}
+.side h3{margin:0 0 6px}
+.sl{font-size:12px;color:var(--mute);margin-top:4px}.sl b{color:var(--ink)}input[type=range]{width:100%;accent-color:#7fd1bd}
+.cs{background:rgba(0,0,0,.3);border-radius:10px;padding:8px;margin-top:6px}
+.cmp{margin-bottom:10px}.cmp .l{display:flex;justify-content:space-between;font-size:12px;color:var(--mute)}
+.bars{display:flex;height:12px;border-radius:6px;overflow:hidden;margin-top:3px}.bars i{display:block}
+.ai{border:1px solid #2f8f78;background:rgba(20,70,60,.45)}.ai li{margin:0 0 8px 18px}
+.title{text-align:center;margin-top:210px}.title h1{font:700 60px Rajdhani,sans-serif;letter-spacing:1px;line-height:1}.title p{font:600 18px Rajdhani,sans-serif;margin-top:4px}
+.home{display:flex;flex-direction:column;gap:12px;width:224px;margin:96px auto 0}.home .btn{flex:none;font-size:18px;text-align:left;padding:13px 14px}
+.empty{color:var(--mute);text-align:center;padding:30px 10px}
+@media(max-width:860px){#side{display:none}}
+@media(max-width:520px){body{padding:0}#phone{width:100vw;height:100dvh;max-height:none;border:0;border-radius:0}#screen{padding-top:env(safe-area-inset-top,20px)}}
+@media(prefers-reduced-motion:reduce){#screen.in,#screen.out{animation:none}}
+</style></head><body>
+<div id="side"><h2>Starmatch wireframe</h2>
+<p>Tap through the phone. Everything is editable in memory; refresh resets.</p>
+<p><b>Navigation map</b></p>
+<p><b>Home</b> → Fleet Command · Ship Command · Mock Combat</p>
+<p><b>Fleet Command</b> → Fleet → Ship stats (Ship Command)</p>
+<p><b>Ship Command</b> → class filter → Ship → ⋯ menu: Edit, Delete, Add to fleet, New ship</p>
+<p><b>Mock Combat</b> → Scenario (blue friendly / red hostile, hull and shield %, notes) → Analyze Combat → AI Officer</p>
+<p><b>Weapons Database</b> → read-only list. Ship DPS and range are calculated from armaments.</p><p>Back arrow returns one step; the logo-less title bar always shows where you are.</p></div>
+<div id="phone"><div id="screen"></div></div>
+<script>
+const CL=['Super Capital','Carrier','Dreadnaught','Battleship','Cruiser','Destroyer','Corvette','Frigate'];
+const SK=[['hull','Hull Strength'],['shield','Shield Strength'],['speed','Speed (m/s)'],['acc','Acceleration'],['turn','Turn Speed (°/s)']];const DK=[['dps','Total DPS'],['hdps','Hull DPS'],['sdps','Shield DPS'],['fdps','Flak DPS'],['range','Max Turret Range (km)']];
+let U=100;const uid=()=>'i'+(U++);
+const W=[{id:'pulse',n:'Pulse Laser',t:'Energy',h:15,s:45,f:0,r:30},{id:'beam',n:'Beam Laser',t:'Energy',h:40,s:110,f:0,r:60},{id:'cannon',n:'Cannon',t:'Kinetic',h:70,s:25,f:0,r:42},{id:'heavy',n:'Heavy Cannon',t:'Kinetic',h:180,s:80,f:0,r:80},{id:'rail',n:'Railgun',t:'Kinetic',h:300,s:30,f:0,r:100},{id:'torp',n:'Torpedo Launcher',t:'Ordnance',h:450,s:150,f:0,r:70},{id:'lance',n:'Spinal Lance',t:'Capital energy',h:1200,s:600,f:0,r:95},{id:'flak',n:'Flak Turret',t:'Point defense',h:0,s:0,f:50,r:12}];
+const wp=id=>W.find(w=>w.id===id);
+function sync(s){let h=0,sd=0,f=0,r=0;s.arms.forEach(a=>{const w=wp(a.w);h+=w.h*a.q;sd+=w.s*a.q;f+=w.f*a.q;if(a.q>0)r=Math.max(r,w.r)});Object.assign(s,{hdps:h,sdps:sd,dps:h+sd,fdps:f,range:r})}
+const mk=(id,name,cls,hull,shield,speed,acc,turn,desc,str,weak,arms)=>{const s={id,name,cls,hull,shield,speed,acc,turn,desc,str,weak,arms};sync(s);return s};
+const S={stack:[{v:'home'}],menu:0,edit:0,snap:null,sheet:null,
+ships:[
+mk('s1','Leviathan','Super Capital',250000,180000,45,6,3,'Flagship-scale war platform that anchors a fleet line.','Massive hull and shields; long-range spinal lance','Slow to turn; easily out-flanked; weak flak coverage',[{w:'lance',q:2},{w:'heavy',q:24},{w:'flak',q:8}]),
+mk('s2','Helios','Carrier',90000,70000,90,14,9,'Fleet carrier launching strike wings and flak screens.','Excellent flak; strong fighter wings','Fragile up close; low direct DPS',[{w:'flak',q:30},{w:'pulse',q:6},{w:'torp',q:2}]),
+mk('s3','Colossus','Dreadnaught',140000,100000,60,8,5,'Heavy line-breaker built for siege work.','High hull DPS; strong armor','Poor vs. fast targets; slow',[{w:'heavy',q:16},{w:'rail',q:4},{w:'flak',q:6}]),
+mk('s4','Aegis Bulwark','Battleship',80000,90000,110,16,12,'Shield-heavy battleship tuned for sustained fire.','Strong shields and shield-breaking lasers','Weak hull armor; short reach',[{w:'beam',q:14},{w:'cannon',q:8},{w:'flak',q:5}]),
+mk('s5','Warden','Cruiser',42000,36000,170,28,24,'Versatile escort cruiser.','Balanced stats; good speed','No standout strength; light armor',[{w:'cannon',q:10},{w:'flak',q:6}]),
+mk('s6','Sabre','Destroyer',24000,18000,260,45,40,'Fast hunter for picking off mid-size targets.','Fast and agile; good hull DPS','Thin shields; dies to focus fire',[{w:'cannon',q:8},{w:'pulse',q:4},{w:'flak',q:3}]),
+mk('s7','Hornet','Corvette',9000,6000,420,80,90,'Swarm skirmisher for raiding and screening.','Very fast; cheap; hard to hit','Short range; fragile',[{w:'pulse',q:6},{w:'flak',q:2}]),
+mk('s8','Valkyrie','Frigate',14000,12000,300,60,70,'Escort frigate specialising in anti-fighter defence.','Excellent flak; agile','Low DPS against capitals',[{w:'flak',q:10},{w:'pulse',q:4}])],
+fleets:[{id:'f1',name:'Alpha Strike Group',ships:['s1','s5','s6','s8']},{id:'f2',name:'Picket Line',ships:['s7','s8','s7']}],
+combats:[{id:'c1',name:'Defense of Kestrel Station',notes:'Enemy expected from the north. Station shields at 60%.',f:[{sid:'s4',hull:90,shield:60},{sid:'s5',hull:100,shield:100},{sid:'s8',hull:100,shield:100}],h:[{sid:'s2',hull:100,shield:100},{sid:'s6',hull:70,shield:40},{sid:'s7',hull:100,shield:100}]}]};
+const $=i=>document.getElementById(i),cur=()=>S.stack[S.stack.length-1],ship=i=>S.ships.find(s=>s.id===i),fmt=n=>Math.round(n).toLocaleString();
+const esc=t=>String(t).replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+function art(c){const k=1.2-CL.indexOf(c)*.07;return `<svg viewBox="0 0 200 100"><g transform="translate(100 50) scale(${k}) translate(-100 -50)" fill="none" stroke="#bfe3da" stroke-width="2"><polygon points="20,50 70,38 150,34 185,50 150,66 70,62"/><polyline points="70,38 95,18 120,34"/><polyline points="70,62 95,82 120,66"/><line x1="40" y1="50" x2="150" y2="50" stroke-dasharray="4 4"/></g><circle cx="${100-70*k}" cy="50" r="4" fill="#7fd1bd"/></svg>`}
+const bar=(t,right='',back=1)=>`<div class="bar">${back?`<button class="ib" onclick="A.back()">‹</button>`:'<span class="sp"></span>'}<h1>${t}</h1>${right||'<span class="sp"></span>'}</div>`;
+const dots=`<button class="ib" onclick="A.menu()">⋯</button>`;
+const mi=(a,l)=>`<div onclick="${a}">${l}</div>`;
+const V={
+home:()=>`<div class="title"><h1>STARMATCH</h1><p>Strategic Management</p></div><div class="home"><div class="btn" onclick="A.go('fleets')">⚑ &nbsp;Fleet Command</div><div class="btn d" onclick="A.go('ships',{c:'All'})">➤ &nbsp;Ship Command</div><div class="btn o" onclick="A.go('combats')">⚔ &nbsp;Mock Combat</div><div class="btn d" onclick="A.go('weapons')">✦ &nbsp;Weapons Database</div></div>`,
+fleets:()=>bar('Fleet Command')+`<div class="body">${S.fleets.map(f=>`<div class="card row"><div class="g" onclick="A.go('fleet',{id:'${f.id}'})"><b>${esc(f.name)}</b><small>${f.ships.length} ships</small></div><button class="ib" onclick="A.nameSheet('Rename fleet','${f.id}','fleet')">✎</button><button class="ib" onclick="A.confirm('Delete fleet?','fleet','${f.id}')">✕</button></div>`).join('')||'<p class="empty">No fleets yet. Create one to build a preset.</p>'}</div><div class="foot"><div class="btn" onclick="A.nameSheet('New fleet',null,'fleet')">+ New fleet</div></div>`,
+fleet:p=>{const f=S.fleets.find(x=>x.id===p.id);return bar(esc(f.name))+`<div class="body">${f.ships.map((id,i)=>{const s=ship(id);return `<div class="card row"><div class="g" onclick="A.go('ship',{id:'${id}'})"><b>${esc(s.name)}</b><small>${s.cls} · ${fmt(s.dps)} DPS</small></div><button class="ib" onclick="A.rm('${f.id}',${i})">✕</button></div>`}).join('')||'<p class="empty">This fleet is empty. Add ships below.</p>'}<p class="sl">Tap a ship to view stats. Stats are edited in Ship Command.</p></div><div class="foot"><div class="btn" onclick="A.pickShip('fleet','${f.id}')">+ Existing ship</div><div class="btn d" onclick="A.newShip('${f.id}')">+ New ship</div></div>`},
+ships:p=>{const l=S.ships.filter(s=>p.c==='All'||s.cls===p.c);return bar('Ship Command',dots)+`<div class="chips">${['All',...CL].map(c=>`<div class="chip ${c===p.c?'on':''}" onclick="A.filt('${c}')">${c}</div>`).join('')}</div><div class="body" style="padding-top:2px">${l.map(s=>`<div class="card row" onclick="A.go('ship',{id:'${s.id}'})"><div style="width:70px">${art(s.cls)}</div><div class="g"><b>${esc(s.name)}</b><small>${fmt(s.dps)} DPS · ${fmt(s.hull)} hull</small></div><span class="tag">${s.cls}</span></div>`).join('')||'<p class="empty">No ships in this class yet. Open the ⋯ menu to add one.</p>'}</div>${S.menu?`<div class="menu">${mi('A.newShip()','New ship')}</div>`:''}`},
+ship:p=>{const s=ship(p.id),e=S.edit,i=(k,t='text')=>`<input ${t==='number'?'type="number"':''} value="${esc(s[k])}" oninput="A.set('${k}',this.value,${t==='number'})">`;
+return bar(e?'Edit Ship':esc(s.name),e?'':dots)+`<div class="body"><div class="img">${art(s.cls)}</div>${e?`<button class="btn d" style="width:100%;margin-bottom:8px">Change picture</button><input class="ed" value="${esc(s.name)}" oninput="A.set('name',this.value)" style="margin-bottom:8px"><select class="ed" onchange="A.set('cls',this.value);" style="margin-bottom:8px">${CL.map(c=>`<option ${c===s.cls?'selected':''}>${c}</option>`).join('')}</select>`:`<span class="tag">${s.cls}</span>`}
+<h3>Stats</h3><div class="grid">${SK.map(([k,l])=>`<div class="st"><small>${l}</small>${e?i(k,'number'):`<b>${fmt(s[k])}</b>`}</div>`).join('')}</div><h3>Combat output <span class="sl">calculated from armaments</span></h3><div class="grid">${DK.map(([k,l])=>`<div class="st"><small>${l}</small><b id="d_${k}">${fmt(s[k])}</b></div>`).join('')}</div>
+<h3>Armaments</h3>${s.arms.map((a,n)=>e?`<div class="row" style="margin-bottom:6px;cursor:default"><select class="ed" onchange="A.arm(${n},'w',this.value)">${W.map(w=>`<option value="${w.id}" ${w.id===a.w?'selected':''}>${w.n}</option>`).join('')}</select><input class="ed" style="width:70px" type="number" min="0" value="${a.q}" oninput="A.arm(${n},'q',this.value)"><button class="ib" onclick="A.armRm(${n})">✕</button></div>`:`<div class="card" style="padding:8px 12px;margin-bottom:6px;display:flex;justify-content:space-between"><span>${wp(a.w).n} <small style="color:var(--mute)">· ${wp(a.w).t}</small></span><b>× ${a.q}</b></div>`).join('')}${e?`<button class="btn d" style="width:100%" onclick="A.armAdd()">+ Add armament</button>`:''}
+${(f=>f('desc','Description')+`<div class="card" style="margin-top:16px"><h3 style="margin:0;font-size:19px">Combat points</h3><p class="sl" style="margin-bottom:2px">For Fleet AI use</p>`+f('str','Strengths')+f('weak','Weaknesses')+`</div>`)((k,l)=>`<h3>${l}</h3>${e?`<textarea class="ed" oninput="A.set('${k}',this.value)">${esc(s[k])}</textarea>`:`<p>${esc(s[k])}</p>`}`)}</div>${e?`<div class="foot"><div class="btn d" onclick="A.cancel()">Cancel</div><div class="btn" onclick="A.save()">Save ship</div></div>`:''}${S.menu?`<div class="menu">${mi('A.edit()','Edit ship')}${mi(`A.confirm('Delete ship?','ship','${s.id}')`,'Delete ship')}${mi(`A.pickFleet('${s.id}')`,'Add ship to fleet')}${mi('A.newShip()','New ship')}</div>`:''}`},
+weapons:()=>bar('Weapons Database')+`<div class="body"><p class="sl" style="margin-bottom:8px">Fixed values. Ship DPS and range are built from these. Total DPS = hull + shield DPS; flak is tracked separately.</p>${W.map(w=>`<div class="card"><div class="row" style="cursor:default"><b class="g" style="font-size:17px">${w.n}</b><span class="tag">${w.t}</span></div><div class="grid" style="grid-template-columns:repeat(4,1fr);margin-top:6px">${[['Hull DPS',w.h],['Shield DPS',w.s],['Flak DPS',w.f],['Range km',w.r]].map(([l,v])=>`<div class="st" style="padding:6px"><small>${l}</small><b style="font-size:15px">${v}</b></div>`).join('')}</div></div>`).join('')}</div>`,
+combats:()=>bar('Mock Combat')+`<div class="body">${S.combats.map(c=>`<div class="card row"><div class="g" onclick="A.go('combat',{id:'${c.id}'})"><b>${esc(c.name)}</b><small>${c.f.length} friendly vs ${c.h.length} hostile</small></div><button class="ib" onclick="A.nameSheet('Rename scenario','${c.id}','combat')">✎</button><button class="ib" onclick="A.confirm('Delete scenario?','combat','${c.id}')">✕</button></div>`).join('')||'<p class="empty">No saved scenarios.</p>'}</div><div class="foot"><div class="btn o" onclick="A.nameSheet('New scenario',null,'combat')">+ New scenario</div></div>`,
+combat:p=>{const c=S.combats.find(x=>x.id===p.id);const side=(k,t,cl)=>`<div class="side ${k}"><div class="row" style="cursor:default"><h3 class="g" style="color:${cl}">${t}</h3><button class="ib" style="width:auto;padding:0 10px;font:600 13px Rajdhani" onclick="A.addTo('${k}')">+ Add</button></div>${c[k].map((e,i)=>{const s=ship(e.sid);return `<div class="cs"><div class="row" style="cursor:default"><div class="g"><b>${esc(s.name)}</b><small>${s.cls}</small></div><button class="ib" style="width:28px;height:28px" onclick="A.cRm('${k}',${i})">✕</button></div>${['hull','shield'].map(m=>`<div class="sl">${m==='hull'?'Hull':'Shield'} <b>${e[m]}%</b></div><input type="range" min="0" max="100" value="${e[m]}" oninput="A.pct('${k}',${i},'${m}',this.value,this)">`).join('')}</div>`}).join('')||'<p class="sl">No ships yet.</p>'}</div>`;
+return bar(esc(c.name))+`<div class="body">${side('f','Friendly fleet','#8db6ff')}${side('h','Hostile fleet','#ff9a9d')}<h3>Scenario notes</h3><textarea class="ed" placeholder="Your notes…" oninput="A.note(this.value)">${esc(c.notes)}</textarea></div><div class="foot"><div class="btn o" onclick="A.go('analyze',{id:'${c.id}'})">Analyze Combat</div></div>`},
+analyze:p=>{const c=S.combats.find(x=>x.id===p.id);return bar('Analysis')+`<div class="body">${analysis(c)}</div>`}};
+function tot(arr){const t={hull:0,shield:0,dps:0,hdps:0,sdps:0,fdps:0,sp:0};arr.forEach(e=>{const s=ship(e.sid);t.hull+=s.hull*e.hull/100;t.shield+=s.shield*e.shield/100;['dps','hdps','sdps','fdps'].forEach(k=>t[k]+=s[k]);t.sp+=s.speed});t.sp=arr.length?t.sp/arr.length:0;t.rng=Math.max(0,...arr.map(e=>ship(e.sid).range));return t}
+const ttk=(a,b)=>(a.sdps?b.shield/a.sdps:Infinity)+(a.hdps?b.hull/a.hdps:Infinity);
+function analysis(c){if(!c.f.length||!c.h.length)return '<p class="empty">Add ships to both sides to analyze.</p>';
+const F=tot(c.f),H=tot(c.h),mine=ttk(F,H),theirs=ttk(H,F),adv=theirs/mine;
+const cmp=(l,a,b)=>{const p=a+b?a/(a+b)*100:50;return `<div class="cmp"><div class="l"><span>${l}</span><span>${fmt(a)} vs ${fmt(b)}</span></div><div class="bars"><i style="width:${p}%;background:var(--blue)"></i><i style="width:${100-p}%;background:var(--red)"></i></div></div>`};
+const v=adv>1.5?['ENGAGE','Favorable odds.']:adv>.8?['ENGAGE WITH CAUTION','Closely matched.']:['AVOID','Unfavorable odds.'];
+const hs=c.h.map(e=>ship(e.sid)),fs=c.f.map(e=>ship(e.sid)),L=[];
+L.push(`<b>${v[0]}.</b> ${v[1]} We destroy them in ~${fmt(mine)}s; they destroy us in ~${fmt(theirs)}s.`);
+if(hs.some(s=>s.cls==='Carrier')&&F.fdps<400)L.push(`Hostile carrier detected. Our flak (${fmt(F.fdps)}) is thin; target the carrier first or add flak ships.`);
+L.push(F.sp>H.sp?`We are faster (${fmt(F.sp)} vs ${fmt(H.sp)} m/s). Flank and use hit-and-run.`:`They are faster (${fmt(H.sp)} vs ${fmt(F.sp)} m/s). Hold formation; do not chase.`);
+if(F.rng>H.rng)L.push(`Our longest weapons outrange theirs. Open fire near ${fmt(F.rng)} km and stay outside ${fmt(H.rng)} km.`);
+const hw=hs.filter(s=>s.weak).slice(0,2).map(s=>`${esc(s.name)}: ${esc(s.weak.toLowerCase())}`);if(hw.length)L.push(`Exploit hostile weaknesses. ${hw.join('; ')}.`);
+const hst=hs.slice(0,2).map(s=>`${esc(s.name)}: ${esc(s.str.toLowerCase())}`);L.push(`Watch hostile strengths. ${hst.join('; ')}.`);
+const dmg=c.f.filter(e=>e.hull<50).map(e=>esc(ship(e.sid).name));if(dmg.length)L.push(`Keep damaged ships (${dmg.join(', ')}) at the rear.`);
+return `<h3>Raw strength <span class="sl">blue friendly · red hostile</span></h3><div class="card">${cmp('Effective hull',F.hull,H.hull)}${cmp('Effective shields',F.shield,H.shield)}${cmp('Total DPS',F.dps,H.dps)}${cmp('Hull DPS',F.hdps,H.hdps)}${cmp('Shield DPS',F.sdps,H.sdps)}${cmp('Flak DPS',F.fdps,H.fdps)}</div><h3>AI Officer</h3><div class="card ai"><ul>${L.map(x=>`<li>${x}</li>`).join('')}</ul><p class="sl">Wireframe logic: uses stats, current hull/shield %, and strengths/weaknesses text.</p></div>`}
+const A={
+go(v,p={}){S.menu=0;S.edit=0;S.stack.push({v,p});A.r('in')},
+back(){if(S.edit)return A.cancel();S.menu=0;if(S.stack.length>1)S.stack.pop();A.r('out')},
+r(a){const el=$('screen');if(a){el.className='';void el.offsetWidth;el.className=a}el.innerHTML=V[cur().v](cur().p||{})+(S.sheet?`<div class="scrim" onclick="if(event.target===this)A.close()"><div class="sheet">${S.sheet}</div></div>`:'')},
+menu(){S.menu=!S.menu;A.r()},close(){S.sheet=null;A.r()},
+filt(c){cur().p.c=c;A.r()},
+edit(){S.menu=0;S.edit=1;S.snap=JSON.stringify(ship(cur().p.id));A.r()},
+save(){S.edit=0;A.r()},cancel(){const s=ship(cur().p.id),o=JSON.parse(S.snap);Object.assign(s,o);S.edit=0;A.r()},
+set(k,v,n){const s=ship(cur().p.id);s[k]=n?Number(v)||0:v},
+arm(i,k,v){const s=ship(cur().p.id);s.arms[i][k]=k==='q'?Math.max(0,Number(v)||0):v;sync(s);A.upd(s)},
+upd(s){DK.forEach(([k])=>{const el=$('d_'+k);if(el)el.textContent=fmt(s[k])})},
+armRm(i){const s=ship(cur().p.id);s.arms.splice(i,1);sync(s);A.r()},armAdd(){const s=ship(cur().p.id);s.arms.push({w:'cannon',q:1});sync(s);A.r()},
+newShip(fid){S.menu=0;const s=mk(uid(),'New Ship',cur().p&&cur().p.c&&cur().p.c!=='All'?cur().p.c:'Frigate',10000,8000,200,30,40,'','','',[{w:'cannon',q:4}]);S.ships.push(s);if(fid)S.fleets.find(f=>f.id===fid).ships.push(s.id);S.stack.push({v:'ship',p:{id:s.id}});S.edit=1;S.snap=JSON.stringify(s);A.r('in')},
+rm(f,i){S.fleets.find(x=>x.id===f).ships.splice(i,1);A.r()},
+pickShip(t,id){S.sheet=`<h2>Add existing ship</h2>${S.ships.map(s=>`<div class="card row" onclick="A.addShipToFleet('${id}','${s.id}')"><div class="g"><b>${esc(s.name)}</b><small>${s.cls}</small></div></div>`).join('')}`;A.r()},
+addShipToFleet(f,s){S.fleets.find(x=>x.id===f).ships.push(s);S.sheet=null;A.r()},
+pickFleet(s){S.menu=0;S.sheet=`<h2>Add to fleet</h2>${S.fleets.map(f=>`<div class="card row" onclick="A.addShipToFleet('${f.id}','${s}')"><div class="g"><b>${esc(f.name)}</b><small>${f.ships.length} ships</small></div></div>`).join('')||'<p class="empty">No fleets yet.</p>'}`;A.r()},
+nameSheet(t,id,kind){const o=id?(kind==='fleet'?S.fleets:S.combats).find(x=>x.id===id).name:'';S.sheet=`<h2>${t}</h2><input id="nm" class="ed" value="${esc(o)}" placeholder="Name" style="margin-bottom:10px"><div class="row"><div class="btn d" onclick="A.close()">Cancel</div><div class="btn" onclick="A.saveName('${id}','${kind}')">Save</div></div>`;A.r()},
+saveName(id,kind){const n=$('nm').value.trim()||'Untitled',l=kind==='fleet'?S.fleets:S.combats;if(id!=='null')l.find(x=>x.id===id).name=n;else{const o=kind==='fleet'?{id:uid(),name:n,ships:[]}:{id:uid(),name:n,notes:'',f:[],h:[]};l.push(o);if(kind==='combat'){S.sheet=null;return A.go('combat',{id:o.id})}}S.sheet=null;A.r()},
+confirm(t,kind,id){S.menu=0;S.sheet=`<h2>${t}</h2><p class="sl" style="margin-bottom:12px">This cannot be undone.</p><div class="row"><div class="btn d" onclick="A.close()">Cancel</div><div class="btn r" onclick="A.del('${kind}','${id}')">Delete</div></div>`;A.r()},
+del(k,id){if(k==='fleet')S.fleets=S.fleets.filter(f=>f.id!==id);if(k==='combat')S.combats=S.combats.filter(f=>f.id!==id);if(k==='ship'){S.ships=S.ships.filter(s=>s.id!==id);S.fleets.forEach(f=>f.ships=f.ships.filter(x=>x!==id));S.combats.forEach(c=>{c.f=c.f.filter(e=>e.sid!==id);c.h=c.h.filter(e=>e.sid!==id)});S.stack.pop()}S.sheet=null;A.r('out')},
+addTo(k){S.sheet=`<h2>Add to ${k==='f'?'friendly':'hostile'} fleet</h2><h3>Single ship</h3>${S.ships.map(s=>`<div class="card row" onclick="A.cAdd('${k}',['${s.id}'])"><div class="g"><b>${esc(s.name)}</b><small>${s.cls}</small></div></div>`).join('')}<h3>From a saved fleet</h3>${S.fleets.map(f=>`<div class="card row" onclick="A.fleetSel('${k}','${f.id}')"><div class="g"><b>${esc(f.name)}</b><small>${f.ships.length} ships · choose all or some</small></div></div>`).join('')}`;A.r()},
+fleetSel(k,fid){const f=S.fleets.find(x=>x.id===fid);S.sheet=`<h2>${esc(f.name)}</h2>${f.ships.map((id,i)=>`<label class="card row"><input type="checkbox" class="pk" value="${id}" checked><div class="g"><b>${esc(ship(id).name)}</b><small>${ship(id).cls}</small></div></label>`).join('')}<div class="btn" onclick="A.cAdd('${k}',[...document.querySelectorAll('.pk:checked')].map(x=>x.value))">Add selected</div>`;A.r()},
+cAdd(k,ids){const c=S.combats.find(x=>x.id===cur().p.id);ids.forEach(id=>c[k].push({sid:id,hull:100,shield:100}));S.sheet=null;A.r()},
+cRm(k,i){S.combats.find(x=>x.id===cur().p.id)[k].splice(i,1);A.r()},
+pct(k,i,m,v,el){S.combats.find(x=>x.id===cur().p.id)[k][i][m]=+v;el.previousElementSibling.querySelector('b').textContent=v+'%'},
+note(v){S.combats.find(x=>x.id===cur().p.id).notes=v}};
+function fit(){if(innerWidth<=520){$('phone').style.zoom=1;return}const z=Math.min(1,(innerHeight-24)/874);$('phone').style.zoom=z}
+addEventListener('resize',fit);fit();A.r();
+</script></body></html>
